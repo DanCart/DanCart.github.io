@@ -106,6 +106,7 @@ button {
 
 #divide {
 	grid-area: 6 / 5 / 7 / 6;
+	font-size: 2em;
 }
 
 #four {
@@ -154,4 +155,5 @@ button {
 
 #backspace {
 	grid-area: 4 / 4 / 5 / 5;
+	font-size: 2.5em;
 }
