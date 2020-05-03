@@ -202,10 +202,10 @@ function MINUS() {
 	if (operatorAdded == false) {
 		calcArray.push(parseFloat(tempArray));
 		tempArray = '';
-		calcArray.push('-');
-		currentDisp.innerText += '-';
+		calcArray.push('−');
+		currentDisp.innerText += '−';
 		operatorAdded = true;
-		tempHistoryArray += '-';
+		tempHistoryArray += '−';
 	}
 }
 
@@ -216,10 +216,10 @@ function MUTIPLY() {
 	if (operatorAdded == false) {
 		calcArray.push(parseFloat(tempArray));
 		tempArray = '';
-		calcArray.push('*');
-		currentDisp.innerText += '*';
+		calcArray.push('×');
+		currentDisp.innerText += '×';
 		operatorAdded = true;
-		tempHistoryArray += '*';
+		tempHistoryArray += '×';
 	}
 }
 
@@ -230,10 +230,10 @@ function DIVIDE() {
 	if (operatorAdded == false) {
 		calcArray.push(parseFloat(tempArray));
 		tempArray = '';
-		calcArray.push('/');
-		currentDisp.innerText += '/';
+		calcArray.push('÷');
+		currentDisp.innerText += '÷';
 		operatorAdded = true;
-		tempHistoryArray += '/';
+		tempHistoryArray += '÷';
 	}
 }
 
@@ -285,17 +285,17 @@ function EQUALS() {
 			while (calcArray.length >= 5) {
 				if (calcArray.length > 3 && calcArray.length % 2 != 0) {
 					while (calcArray.length >= 5) {
-						if (calcArray.indexOf('*', 2) >= 1 || calcArray.indexOf('/', 2) >= 1) {
+						if (calcArray.indexOf('×', 2) >= 1 || calcArray.indexOf('/', 2) >= 1) {
 							let newIndex;
-							if (calcArray.indexOf('*', 2) != -1) {
-								newIndex = calcArray.indexOf('*');
+							if (calcArray.indexOf('×', 2) != -1) {
+								newIndex = calcArray.indexOf('×');
 								let num1 = calcArray[newIndex - 1];
 								let num2 = calcArray[newIndex + 1];
 								let test = multiply(num1, num2);
 								calcArray.splice(newIndex - 1, 3, test);
 								newIndex = '';
-							} else if (calcArray.indexOf('/', 2) != -1) {
-								newIndex = calcArray.indexOf('/');
+							} else if (calcArray.indexOf('÷', 2) != -1) {
+								newIndex = calcArray.indexOf('÷');
 								let num1 = calcArray[newIndex - 1];
 								let num2 = calcArray[newIndex + 1];
 								if (num1 == 0 || num2 == 0) {
@@ -313,10 +313,10 @@ function EQUALS() {
 							let num1 = calcArray[0];
 							let num2 = calcArray[2];
 							let operator = calcArray[1];
-							if (operator == '*') {
+							if (operator == '×') {
 								let test = multiply(num1, num2);
 								calcArray.splice(0, 3, test);
-							} else if (operator == '/') {
+							} else if (operator == '÷') {
 								if (num1 == 0 || num2 == 0) {
 									console.log('Division by zero error');
 									currentDisp.innerText = 'Error';
@@ -329,7 +329,7 @@ function EQUALS() {
 							} else if (operator == '+') {
 								let test = add(num1, num2);
 								calcArray.splice(0, 3, test);
-							} else if (operator == '-') {
+							} else if (operator == '−') {
 								let test = subtract(num1, num2);
 								calcArray.splice(0, 3, test);
 							}
@@ -342,9 +342,9 @@ function EQUALS() {
 			let num1 = calcArray[0];
 			let num2 = calcArray[2];
 			let operator = calcArray[1];
-			if (operator == '*') {
+			if (operator == '×') {
 				runningTotal += multiply(num1, num2);
-			} else if (operator == '/') {
+			} else if (operator == '÷') {
 				if (num1 == 0 || num2 == 0) {
 					console.log('Division by zero error');
 					currentDisp.innerText = 'Error';
@@ -355,7 +355,7 @@ function EQUALS() {
 				}
 			} else if (operator == '+') {
 				runningTotal += add(num1, num2);
-			} else if (operator == '-') {
+			} else if (operator == '−') {
 				runningTotal += subtract(num1, num2);
 			}
 		}
